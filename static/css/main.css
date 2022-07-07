@@ -1,0 +1,18 @@
+.outline-bottom {
+    box-sizing: border-box;
+    border-bottom: .5px solid #AC9793;
+    color:  #CDC1BE;
+}
+
+.outline-bottom:focus {
+    outline: none;
+    text-decoration: none;
+    border-bottom: .5px solid #fff;
+    color: #fff;
+
+}
+
+.outline-bottom::placeholder { 
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #AC9793;
+  }
