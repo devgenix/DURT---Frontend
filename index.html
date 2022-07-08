@@ -10,7 +10,9 @@
       <meta name="keywords" content="">
       <meta name="description" content="">
       <meta name="author" content="">
-
+      
+      <!-- fevicon -->
+      <link rel="icon" href="static/images/favicon.svg" type="image/gif" />
       
     
        <!-- style css -->
@@ -23,7 +25,7 @@
           theme: {
             screens: {
               'xs': '377px',
-              'md': '677',
+              'sm': '677px',
              
         },
             extend: {
@@ -34,7 +36,8 @@
                 white: '#fff',
                 white2: '#CDC1BE',
                 white3: '#AC9793',
-                yellow: "#EDA911"
+                yellow: "#EDA911",
+                error: "#ff5b5b",
               }
             }
           }
@@ -46,26 +49,26 @@
     <h1 class="text-5xl font-bold mb-2">Durt.in</h1>
     <p class="text-white2">Wicked fast and powerful link shortener</p>
     
-    <div class="bg-brand2 rounded rounded-[32px] mt-6 py-16 md:py-20 px-4 md:px-12 drop-shadow-[0_16px_16px_rgba(0,0,0,0.03 )]">
-      <input id="linkk" type="text" name="email" id="email" class=" px-3 py-4 w-full bg-transparent outline-bottom mb-4" placeholder="Original long link (https://www.google.com/search?q=what+is+a+link+shortener%3F)" > 
-      <div class="error_isActiveText" style="display: none;"></div>
+    <div class="bg-brand2 rounded rounded-[32px] mt-6 py-16 sm:py-20 px-4 sm:px-12 drop-shadow-[0_16px_16px_rgba(0,0,0,0.03 )]">
+      <input id="long-link" type="text" name="email" id="email" class=" px-3 py-4 w-full bg-transparent outline-bottom mb-4" placeholder="Original long link (https://www.google.com/search?q=what+is+a+link+shortener%3F)" > 
+      <div id="error_isActiveText" class="error bg-error p-2 w-full rounded rounded-xl" style="display: none;"></div>
       
-      <input id="alias" type="text" name="name" class="px-3 py-4 w-full bg-transparent outline-bottom mb-4" placeholder='Unique name (durt.in/"link")'>
-      <div class="url_error_isActiveText" style="display: none;"></div>
+      <input id="alias" type="text" name="name" class="px-3 py-4 w-full bg-transparent outline-bottom mb-4" placeholder='Unique name (durt.in/link)'>
+      <div id="url_error_isActiveText" class="error bg-error p-2 w-full rounded rounded-xl" style="display: none;"></div>
   
-      <button id="submitButton" class="bg-yellow rounded rounded-full w-full py-4 mt-5 text-lg hover:bg-black">Make magic</button>
+      <button id="submitButton" class="send_btn submitbutton submit bg-yellow rounded rounded-full w-full py-4 mt-5 text-lg hover:bg-black">Make magic</button>
 
-      <div class="server_error_isActiveText text-center" style="display: none; text-align: center; color: white;">
+      <div id="server_error_isActiveText"  style="display: none; text-align: center; color: white;">
         Server Internal error, please contact 
         <a style="color:#2A2E32; font-weight: bold;" href="mailto:emmanueln644@gmail.com">admin</a> 
         and try again later
       </div>
       
-      <div id="success_isActiveText" class="output-link success_isActiveText w-full h-[60px] mt-5 rounded rounded-full new-link flex" >
+      <div id="success_isActiveText" class="output-link w-full h-[60px] mt-5 rounded rounded-full flex items-center justify-between" >
       
-        <a class="copy-text w-auto  xs:w-full p-4 pl-6 text-left" target="_BLANK" href="" style="margin: 0 auto;">durt.in/kingslee</a>
+        <a class="copy-text w-auto p-4 pl-6 text-left" target="_BLANK" href="" ></a>
  
-        <button class="py-2 px-2 xs:px-8 rounded rounded-full m-2 bg-yellow hover:bg-black" >
+        <button class="copy-button py-2 px-2 sm:px-8 rounded rounded-full m-2 bg-yellow hover:bg-black" >
            <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M13.5 21L4.5 21C3.94772 21 3.5 20.5523 3.5 20L3.5 7C3.5 6.44772 3.94772 6 4.5 6L10.0858 6C10.351 6 10.6054 6.10536 10.7929 6.29289L14.2071 9.70711C14.3946 9.89464 14.5 10.149 14.5 10.4142V20C14.5 20.5523 14.0523 21 13.5 21Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               <path d="M10.5 6L10.5 4C10.5 3.44771 10.9477 3 11.5 3L17.0858 3C17.351 3 17.6054 3.10536 17.7929 3.29289L21.2071 6.70711C21.3946 6.89464 21.5 7.149 21.5 7.41421V17C21.5 17.5523 21.0523 18 20.5 18L14.5 18" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -102,13 +105,7 @@
 
  <!-- Javascript files-->
  <script src="static/js/jquery.min.js"></script>
- <script src="static/js/popper.min.js"></script>
- <script src="static/js/bootstrap.bundle.min.js"></script>
- <script src="static/js/jquery-3.0.0.min.js"></script>
- <!-- sidebar -->
- <script src="static/js/jquery.mCustomScrollbar.concat.min.js"></script>
  <script src="static/js/main.js"></script>
- <script src="static/js/jquery.fancybox.min.js"></script>
-    
+ 
 </body>
 </html>
