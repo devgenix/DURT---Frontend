@@ -16,3 +16,7 @@
     /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: #AC9793;
   }
+
+  .output-link {
+      border: 1px solid white
+  }
