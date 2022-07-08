@@ -6,12 +6,12 @@ const FormButton = document.querySelector('.submitbutton');
 
 FormButton.addEventListener('click', e => {
     e.preventDefault();
-    const aliasInputField = document.querySelector('.alias'); 
-    const textInput = document.querySelector('#linkk');
-    const errorEl = document.querySelector('.error_isActiveText');
-    const errorSV = document.querySelector('.server_error_isActiveText')
-    const errorUl = document.querySelector('.url_error_isActiveText');
-    const success = document.querySelector('.success_isActiveText');
+    const aliasInputField = document.querySelector('#alias'); 
+    const textInput = document.querySelector('#long-link');
+    const errorEl = document.querySelector('#error_isActiveText');
+    const errorSV = document.querySelector('#server_error_isActiveText')
+    const errorUl = document.querySelector('#url_error_isActiveText');
+    const success = document.querySelector('#success_isActiveText');
     validate(FormButton, aliasInputField, textInput, errorEl, errorSV, errorUl, success);
   });
 
@@ -104,14 +104,14 @@ FormButton.addEventListener('click', e => {
             var returned_data = await response.json();
   
             // inputField.value = '';
-            successField.style.display = 'block'
+            successField.style.display = 'flex'
             let r_link = returned_data.short_url
             let result = $('#success_isActiveText a');
             full_url = base_url + r_link
             result.attr('href', full_url)
             result.text(full_url)
             buttonEl.disabled = false;
-            buttonEl.innerHTML = 'Make Short';
+            buttonEl.innerHTML = 'Make Magic';
           }
 
           else {
@@ -165,7 +165,7 @@ FormButton.addEventListener('click', e => {
             var returned_data = await response.json();
   
             // inputField.value = '';
-            successField.style.display = 'block'
+            successField.style.display = 'flex'
             let r_link = returned_data.short_url
             let result = $('#success_isActiveText a');
             full_url = base_url + r_link
@@ -276,7 +276,12 @@ function copyToClipboard(elem) {
   }
   copybutton.innerHTML = 'Copied'
   setTimeout(() => {
-    copybutton.innerHTML = 'Copy'
+    copybutton.innerHTML = `<svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M13.5 21L4.5 21C3.94772 21 3.5 20.5523 3.5 20L3.5 7C3.5 6.44772 3.94772 6 4.5 6L10.0858 6C10.351 6 10.6054 6.10536 10.7929 6.29289L14.2071 9.70711C14.3946 9.89464 14.5 10.149 14.5 10.4142V20C14.5 20.5523 14.0523 21 13.5 21Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M10.5 6L10.5 4C10.5 3.44771 10.9477 3 11.5 3L17.0858 3C17.351 3 17.6054 3.10536 17.7929 3.29289L21.2071 6.70711C21.3946 6.89464 21.5 7.149 21.5 7.41421V17C21.5 17.5523 21.0523 18 20.5 18L14.5 18" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M14.5 11L10.5 11C9.94772 11 9.5 10.5523 9.5 10L9.5 6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M21.5 8L17.5 8C16.9477 8 16.5 7.55228 16.5 7L16.5 3" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>`
   }, 3000);
 
   return succeed;
@@ -305,9 +310,9 @@ $(function () {
 	/* Tooltip
 	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
 
-	$(document).ready(function () {
-		$('[data-toggle="tooltip"]').tooltip();
-	});
+	// $(document).ready(function () {
+	// 	$('[data-toggle="tooltip"]').tooltip();
+	// });
 
 
 
@@ -378,9 +383,9 @@ $(function () {
 	/* Product slider 
 	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
 	// optional
-	$('#blogCarousel').carousel({
-		interval: 5000
-	});
+	// $('#blogCarousel').carousel({
+	// 	interval: 5000
+	// });
 
 
 });
