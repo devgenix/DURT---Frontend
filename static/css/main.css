@@ -13,6 +13,7 @@ html {
     scroll-behavior: smooth;
 }
 
+
 .outline-bottom {
     box-sizing: border-box;
     border-bottom: .5px solid var(--white3);
@@ -33,7 +34,8 @@ html {
   }
 
   .output-link {
-      border: 1px solid var(--white)
+    border: 1px solid var(--white);
+    display: none;
   }
 
   .copy-text {
@@ -53,4 +55,20 @@ html {
 
   a {
       display: inline-block;
+  }
+
+
+  .loader {
+    border: 3px solid #EDA911;
+    border-top: 3px solid white;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto;
+  }
+
+  button:hover {
+    transition: all .5s ease-in-out;
+    background-color: var(--black);
   }
