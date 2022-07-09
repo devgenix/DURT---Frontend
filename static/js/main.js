@@ -57,6 +57,16 @@ FormButton.addEventListener('click', e => {
         const newSpan = document.createElement('div');
         newSpan.classList.add('loader');
         buttonEl.appendChild(newSpan);
+        var tl = gsap.timeline({duration: 0.5});
+        tl.to(".loader", {
+          rotate : +360,
+          repeat: -2
+        }).to(".footer-link", {
+          duration: .6, opacity:1, ease:"bounce", yoyo:true
+      }).to(".footer-link", {
+        duration: .6, opacity:.4, ease:"bounce", yoyo:true
+    });
+        
         // buttonEl.style.display = 'flex';
         // buttonEl.style.justifyContent = 'center';
         // buttonEl.style.alignItems = 'center';
@@ -104,8 +114,14 @@ FormButton.addEventListener('click', e => {
             var returned_data = await response.json();
   
             // inputField.value = '';
-            successField.style.display = 'flex'
-            let r_link = returned_data.short_url
+            //What happens on success
+            successField.style.display = 'flex';
+            gsap.from("#success_isActiveText", {
+              y:-60, duration: .6, 
+              opacity: 0, 
+              ease: "elastic.inOut",
+            })
+            let r_link = returned_data.short_url;
             let result = $('#success_isActiveText a');
             full_url = base_url + r_link
             result.attr('href', full_url)
@@ -307,7 +323,7 @@ $(function () {
 	/* JQuery Menu
 	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
 
-	/* Tooltip
+	/* Tooltip.
 	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
 
 	// $(document).ready(function () {
