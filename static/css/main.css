@@ -57,6 +57,10 @@ html {
       display: inline-block;
   }
 
+  .welcome-text {
+    /* display: none; */
+  }
+
 
   .loader {
     border: 3px solid #EDA911;

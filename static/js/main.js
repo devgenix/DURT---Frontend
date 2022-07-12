@@ -19,8 +19,14 @@ FormButton.addEventListener('click', e => {
     const re = /(?:https?):\/\/(\w+:?\w*)?(\S+)(:\d+)?(\/|\/([\w#!:.?+=&%!\-\/]))?/;
     if (inputField.value.length == 0) {
       inputField.classList.add('error_active');
-      errorField.innerHTML = 'Provide a link';
+      errorField.innerHTML = 'Please provide a link';
       errorField.style.display = 'block';
+      gsap.from("#error_isActiveText", {
+        y:-60, duration: 0.6, 
+        display: "block",
+        opacity: 0, 
+        ease: "elastic.inOut",
+      });
       setTimeout(() => {
         inputField.classList.remove('error_active');
         errorField.innerHTML = '';
@@ -31,6 +37,12 @@ FormButton.addEventListener('click', e => {
       inputField.classList.add('error_active');
       errorField.innerHTML = "Please provide a valid url";
       errorField.style.display = 'block';
+      gsap.from("#error_isActiveText", {
+        y:-60, duration: 0.6, 
+        display: "block",
+        opacity: 0, 
+        ease: "elastic.inOut",
+      });
       setTimeout(() => {
         inputField.classList.remove('error_active');
         errorField.innerHTML = '';
@@ -41,6 +53,12 @@ FormButton.addEventListener('click', e => {
       aliasInput.classList.add('error_active');
       errorFieldAlias.innerHTML = 'Cannot be more than 30 characters';
       errorFieldAlias.style.display = 'block';
+      gsap.from("#url_error_isActiveText", {
+        y:-60, duration: 0.6, 
+        display: "block",
+        opacity: 0, 
+        ease: "elastic.inOut",
+      });
       setTimeout(() => {
         aliasInput.classList.remove('error_active');
         errorFieldAlias.innerHTML = '';
@@ -89,6 +107,12 @@ FormButton.addEventListener('click', e => {
 
           if (response.status == 500) {
             errorSV.style.display = 'block';
+            gsap.from("#server_error_isActiveText", {
+              y:-60, duration: 0.6, 
+              display: "block",
+              opacity: 0, 
+              ease: "elastic.inOut",
+            });
             errorField.style.display = 'none';
             newSpan.classList.remove('loader');
             buttonEl.disabled = false;
@@ -97,6 +121,12 @@ FormButton.addEventListener('click', e => {
           
           else if (response.status == 400) {
             errorSV.style.display = 'block';
+            gsap.from("#server_error_isActiveText", {
+              y:-60, duration: 0.6, 
+              display: "block",
+              opacity: 0, 
+              ease: "elastic.inOut",
+            });
             errorSV.innerHTML = "Something went wrong, please contact admin"
             errorField.style.display = 'none';
             newSpan.classList.remove('loader');
@@ -115,12 +145,13 @@ FormButton.addEventListener('click', e => {
   
             // inputField.value = '';
             //What happens on success
-            successField.style.display = 'flex';
             gsap.from("#success_isActiveText", {
-              y:-60, duration: .6, 
+              y:-60, duration: 0.6, 
+              display: "flex",
               opacity: 0, 
               ease: "elastic.inOut",
-            })
+            });
+            // successField.style.display = 'flex';
             let r_link = returned_data.short_url;
             let result = $('#success_isActiveText a');
             full_url = base_url + r_link
