@@ -145,13 +145,13 @@ FormButton.addEventListener('click', e => {
   
             // inputField.value = '';
             //What happens on success
+            successField.style.display = 'flex';
             gsap.from("#success_isActiveText", {
               y:-60, duration: 0.6, 
               display: "flex",
               opacity: 0, 
               ease: "elastic.inOut",
             });
-            // successField.style.display = 'flex';
             let r_link = returned_data.short_url;
             let result = $('#success_isActiveText a');
             full_url = base_url + r_link
